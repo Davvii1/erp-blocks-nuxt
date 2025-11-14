@@ -1,19 +1,28 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addLayout, createResolver, addTemplate } from '@nuxt/kit'
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
-
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule({
   meta: {
     name: 'my-module',
     configKey: 'myModule',
   },
-  // Default configuration options of the Nuxt module
   defaults: {},
-  setup(_options, _nuxt) {
-    const resolver = createResolver(import.meta.url)
+  setup(_options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    nuxt.options.css.push(resolve('./assets/css/main.css'))
+
+    addTemplate({
+      filename: 'app.vue',
+      src: resolve('./runtime/app.vue'),
+    })
+
+    addLayout({
+      src: resolve('./runtime/layouts/dashboard-layout.vue'),
+    }, 'dashboard')
+  },
+  moduleDependencies: {
+    '@nuxt/ui': {
+      version: '>=4.0.0',
+    },
   },
 })

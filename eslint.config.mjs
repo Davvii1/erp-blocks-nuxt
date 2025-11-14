@@ -13,4 +13,8 @@ export default createConfigForNuxt({
   dirs: {
     src: ['./playground'],
   },
-}).append()
+}).append({
+  rules: {
+    'vue/multi-word-component-names': 'off',
+  },
+})
