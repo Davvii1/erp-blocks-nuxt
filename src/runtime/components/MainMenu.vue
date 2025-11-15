@@ -1,0 +1,173 @@
+<template>
+  <UNavigationMenu
+    orientation="vertical"
+    :items="items"
+    class="data-[orientation=vertical]:w-full py-12 px-2 gap-2"
+  />
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import type { NavigationMenuItem } from '@nuxt/ui'
+
+const items = ref<NavigationMenuItem[][]>([
+  [
+    {
+      label: 'Personas',
+      icon: 'i-lucide:handshake',
+      children: [
+        {
+          label: 'Asociados',
+        },
+        {
+          label: 'Clientes',
+        },
+      ],
+    },
+    {
+      label: 'Solicitudes',
+      icon: 'i-lucide:receipt-text',
+      children: [
+        {
+          label: 'Generales',
+        },
+        {
+          label: 'Pendientes',
+        },
+        {
+          label: 'Internas',
+        },
+      ],
+    },
+    {
+      label: 'Depósitos',
+      icon: 'i-lucide:banknote',
+      children: [
+        {
+          label: 'Generales',
+        },
+        {
+          label: 'Aplicaciones de pago',
+        },
+        {
+          label: 'Complementos de pago',
+        },
+      ],
+    },
+    {
+      label: 'Dispersiones',
+      icon: 'i-lucide:hand-coins',
+      children: [
+        {
+          label: 'Generales',
+        },
+        {
+          label: 'Masivas',
+        },
+      ],
+    },
+    {
+      label: 'Legal',
+      icon: 'i-lucide:landmark',
+      children: [
+        {
+          label: 'Empresas',
+        },
+        {
+          label: 'Cheques',
+        },
+      ],
+    },
+    {
+      label: 'Saldos',
+      icon: 'i-lucide:wallet',
+      children: [
+        {
+          label: 'Generales',
+        },
+        {
+          label: 'Transpasos',
+        },
+      ],
+    },
+    {
+      label: 'Tesorería',
+      icon: 'i-lucide:wallet-cards',
+      children: [
+        {
+          label: 'Cuentas',
+        },
+        {
+          label: 'Cuentas fallidas',
+        },
+      ],
+    },
+    {
+      label: 'Finanzas',
+      icon: 'i-lucide:badge-dollar-sign',
+      children: [
+        {
+          label: 'Límites',
+        },
+        {
+          label: 'Financiados',
+        },
+        {
+          label: 'Porcentajes pendientes',
+        },
+        {
+          label: 'Distribuciones',
+        },
+        {
+          label: 'Movimientos de distribuciones',
+        },
+      ],
+    },
+    {
+      label: 'Comisiones',
+      icon: 'i-lucide:square-percent',
+      children: [
+        {
+          label: 'Depósitos pendientes',
+        },
+        {
+          label: 'Comisiones generadas',
+        },
+        {
+          label: 'Pagos de comisiones',
+        },
+        {
+          label: 'Cuentas de asociados',
+        },
+      ],
+    },
+    {
+      label: 'Cajas',
+      icon: 'i-lucide:coins',
+      children: [
+        {
+          label: 'Dispersiones pendientes flujo',
+        },
+        {
+          label: 'Movimientos',
+        },
+        {
+          label: 'Solicitudes de dinero',
+        },
+        {
+          label: 'Bancarización',
+        },
+      ],
+    },
+    {
+      label: 'Gastos',
+      icon: 'i-lucide:banknote-arrow-down',
+      children: [
+        {
+          label: 'Lugares',
+        },
+      ],
+    },
+  ],
+])
+</script>

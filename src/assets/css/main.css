@@ -1,2 +1,39 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+@source "../../runtime/";
+
+@theme {
+  --color-scn-secondary: #f5f5f5;
+  --color-scn-sidebar: 240 5.9% 10%;
+  --color-scn-sidebar-border: #e5e5e5;
+
+  --animate-collapsible-right: collapsible-right 200ms ease-out;
+  --animate-collapsible-left: collapsible-left 200ms ease-in-out;
+
+  @keyframes collapsible-right {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+    to {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  @keyframes collapsible-left {
+    from {
+      width: 100%;
+      opacity: 1;
+    }
+    to {
+      width: 0;
+      opacity: 0;
+    }
+  }
+}
+
+@variant dark {
+  --color-scn-secondary: oklch(12.9% 0 0);
+}

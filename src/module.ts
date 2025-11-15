@@ -1,4 +1,4 @@
-import { defineNuxtModule, addLayout, createResolver, addTemplate } from '@nuxt/kit'
+import { defineNuxtModule, addLayout, createResolver, addTemplate, addComponentsDir } from '@nuxt/kit'
 
 export default defineNuxtModule({
   meta: {
@@ -10,10 +10,15 @@ export default defineNuxtModule({
     const { resolve } = createResolver(import.meta.url)
 
     nuxt.options.css.push(resolve('./assets/css/main.css'))
+    nuxt.options.build.transpile.push(resolve('./runtime'))
 
     addTemplate({
       filename: 'app.vue',
       src: resolve('./runtime/app.vue'),
+    })
+
+    addComponentsDir({
+      path: resolve('./runtime/components'),
     })
 
     addLayout({
