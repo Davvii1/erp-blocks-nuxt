@@ -1,19 +1,46 @@
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addLayout, createResolver, addTemplate, addComponentsDir } from '@nuxt/kit'
+// import type { NavigationMenuItem } from '@nuxt/ui'
 
-// Module options TypeScript interface definition
-export interface ModuleOptions {}
+// export interface ModuleOptions {
+//   /**
+//    * Dashboard Menu Items
+//    */
+//   menuItems?: NavigationMenuItem[][]
+// }
 
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule',
+    name: 'erp-blocks',
+    configKey: 'erp',
   },
-  // Default configuration options of the Nuxt module
   defaults: {},
-  setup(_options, _nuxt) {
-    const resolver = createResolver(import.meta.url)
+  setup(_options, nuxt) {
+    const { resolve } = createResolver(import.meta.url)
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
+    nuxt.options.css.push(resolve('./assets/css/main.css'))
+    nuxt.options.build.transpile.push(resolve('./runtime'))
+
+    addTemplate({
+      filename: 'app.vue',
+      src: resolve('./runtime/app.vue'),
+    })
+
+    addTemplate({
+      filename: 'index.d.ts',
+      src: resolve('./runtime/index.d.ts'),
+    })
+
+    addComponentsDir({
+      path: resolve('./runtime/components'),
+    })
+
+    addLayout({
+      src: resolve('./runtime/layouts/dashboard-layout.vue'),
+    }, 'dashboard')
+  },
+  moduleDependencies: {
+    '@nuxt/ui': {
+      version: '>=4.0.0',
+    },
   },
 })
