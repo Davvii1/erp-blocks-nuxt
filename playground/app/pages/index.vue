@@ -7,5 +7,6 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'dashboard',
+  dashboardTitle: 'Dashboard',
 })
 </script>

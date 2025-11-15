@@ -10,7 +10,7 @@
           'opacity-0': false,
         }"
       >
-        Dashboard
+        {{ route.meta.dashboardTitle }}
       </h1>
     </div>
     <div class="space-x-6 flex items-center">
@@ -20,6 +20,9 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from '#app'
 import ColorModeButton from './ColorModeButton.vue'
 import SidebarTrigger from './SidebarTrigger.vue'
+
+const route = useRoute()
 </script>
