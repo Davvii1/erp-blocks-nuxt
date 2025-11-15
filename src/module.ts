@@ -1,9 +1,17 @@
 import { defineNuxtModule, addLayout, createResolver, addTemplate, addComponentsDir } from '@nuxt/kit'
+// import type { NavigationMenuItem } from '@nuxt/ui'
+
+// export interface ModuleOptions {
+//   /**
+//    * Dashboard Menu Items
+//    */
+//   menuItems?: NavigationMenuItem[][]
+// }
 
 export default defineNuxtModule({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule',
+    name: 'erp-blocks',
+    configKey: 'erp',
   },
   defaults: {},
   setup(_options, nuxt) {
@@ -15,6 +23,11 @@ export default defineNuxtModule({
     addTemplate({
       filename: 'app.vue',
       src: resolve('./runtime/app.vue'),
+    })
+
+    addTemplate({
+      filename: 'index.d.ts',
+      src: resolve('./runtime/index.d.ts'),
     })
 
     addComponentsDir({
