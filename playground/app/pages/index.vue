@@ -3,6 +3,7 @@
     <div class="space-x-2">
       <FiltersModal />
       <ConfirmationModal />
+      <NewSlider />
     </div>
     <div class="grow">
       <DataTable
