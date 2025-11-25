@@ -1,13 +1,17 @@
 <template>
   <UModal v-bind="modalProps">
-    <UButton
-      v-bind="buttonProps"
-    />
+    <slot name="trigger">
+      <UButton
+        icon="i-lucide:filter"
+        label="Filters"
+        color="neutral"
+        variant="solid"
+        class="cursor-pointer"
+      />
+    </slot>
 
     <template #body>
-      <slot name="body">
-        <slot />
-      </slot>
+      <slot name="body" />
     </template>
 
     <template #footer>
@@ -31,11 +35,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ModalProps, ButtonProps } from '@nuxt/ui'
+import type { ModalProps } from '@nuxt/ui'
 
 withDefaults(defineProps<{
   modalProps?: ModalProps
-  buttonProps?: ButtonProps
 }>(), {
   modalProps: () => ({
     title: 'Filters',
@@ -43,13 +46,6 @@ withDefaults(defineProps<{
     ui: {
       footer: 'justify-end',
     },
-  }),
-  buttonProps: () => ({
-    icon: 'i-lucide:filter',
-    label: 'Filters',
-    color: 'neutral',
-    variant: 'solid',
-    class: 'cursor-pointer',
   }),
 })
 
