@@ -17,7 +17,7 @@ export default defineNuxtModule({
   setup(_options, nuxt) {
     const { resolve } = createResolver(import.meta.url)
 
-    nuxt.options.css.push(resolve('./assets/css/main.css'))
+    nuxt.options.css.push(resolve('./runtime/assets/css/main.css'))
     nuxt.options.build.transpile.push(resolve('./runtime'))
 
     addTemplate({
