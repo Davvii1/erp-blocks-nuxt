@@ -1,5 +1,5 @@
-import { useFetch, type UseFetchOptions } from '#app'
-import { useState } from '#app'
+import { useFetch, useState, type UseFetchOptions, type AsyncData } from '#app'
+import type { Ref } from 'vue'
 
 export type CountFetchOptions<T> = UseFetchOptions<T> & {
   count?: {
@@ -11,7 +11,7 @@ export type CountFetchOptions<T> = UseFetchOptions<T> & {
 export function useCountFetch<T>(
   url: string | (() => string),
   options: CountFetchOptions<T>,
-) {
+): AsyncData<T, Error | null> & { count: Ref<number | undefined> } {
   const defaultCount = options.count ?? {
     source: 'header' as const,
     name: 'X-Total-Count',
@@ -58,5 +58,5 @@ export function useCountFetch<T>(
   return {
     ...fetch,
     count,
-  }
+  } as AsyncData<T, Error | null> & { count: Ref<number | undefined> }
 }
