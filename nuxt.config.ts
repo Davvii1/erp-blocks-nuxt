@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: [join(currentDir, './runtime/components')],
   },
-  css: [join(currentDir, './assets/css/tailwind.css')],
+  css: [join(currentDir, './runtime/assets/css/tailwind.css')],
   eslint: {
     config: {
       stylistic: true,
