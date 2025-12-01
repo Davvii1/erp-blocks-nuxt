@@ -1,74 +1,84 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: my-module
-- Description: My new Nuxt module
--->
-
-# My Module
+# ERP Blocks for Nuxt 4
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-My new Nuxt module for doing amazing things.
-
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
+A collection of ready-to-use UI layouts and components designed as ERP system elements for Nuxt 4 applications.
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- 🏗️ **Dashboard Layout** - Responsive dashboard layout with collapsible sidebar
+- 🔄 **Data Fetching** - Enhanced `useCountFetch` composable for handling paginated data
+- 🎨 **Pre-styled Components** - Common ERP components with consistent styling
+- 🧩 **Modular Design** - Easy to customize and extend for your needs
+- 🚀 **Nuxt 4 Ready** - Built with Nuxt 4 and Vue 3 Composition API
 
-## Quick Setup
+## Installation
 
-Install the module to your Nuxt application with one command:
+1. Add `erp-blocks` dependency to your project:
 
 ```bash
-npx nuxi module add my-module
+npm install erp-blocks
+# or
+yarn add erp-blocks
+# or
+pnpm add erp-blocks
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+2. Add `erp-blocks` to the `modules` section of `nuxt.config.ts`:
 
+```ts
+export default defineNuxtConfig({
+  modules: ['erp-blocks']
+})
+```
 
-## Contribution
+## Usage
 
-<details>
-  <summary>Local development</summary>
-  
-  ```bash
-  # Install dependencies
-  npm install
-  
-  # Generate type stubs
-  npm run dev:prepare
-  
-  # Develop with the playground
-  npm run dev
-  
-  # Build the playground
-  npm run dev:build
-  
-  # Run ESLint
-  npm run lint
-  
-  # Run Vitest
-  npm run test
-  npm run test:watch
-  
-  # Release new version
-  npm run release
-  ```
+### Dashboard Layout
+
+Use the provided dashboard layout in your pages:
+
+```vue
+<template>
+  <div>
+    <!-- Your page content -->
+  </div>
+</template>
+
+<script setup>
+definePageMeta({
+  layout: 'dashboard'
+})
+</script>
+```
+
+### useCountFetch Composable
+
+The `useCountFetch` composable extends Nuxt's `useFetch` with count tracking capabilities, useful for paginated data:
+
+```ts
+const { data, pending, error, count } = useCountFetch('/api/items', {
+  count: {
+    source: 'header', // or 'key' for JSON response
+    name: 'X-Total-Count' // header name or object key
+  },
+  // Standard useFetch options
+  query: {
+    page: 1,
+    limit: 10
+  }
+})
+```
+
+### Available Components
+
+- `CollapsibleSidebar` - A responsive, collapsible sidebar component
+- `NavigationHeader` - Top navigation bar component
 
 </details>
-
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/my-module/latest.svg?style=flat&colorA=020420&colorB=00DC82
