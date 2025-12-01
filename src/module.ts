@@ -1,4 +1,4 @@
-import { defineNuxtModule, addLayout, createResolver, addTemplate, addComponentsDir, addImports } from '@nuxt/kit'
+import { defineNuxtModule, addLayout, createResolver, addTemplate, addComponentsDir, addImportsDir } from '@nuxt/kit'
 // import type { NavigationMenuItem } from '@nuxt/ui'
 
 // export interface ModuleOptions {
@@ -38,9 +38,7 @@ export default defineNuxtModule({
       src: resolve('./runtime/layouts/dashboard-layout.vue'),
     }, 'dashboard')
 
-    addImports([
-      { name: 'useCountFetch', from: resolve('./runtime/composables/useCountFetch.ts') },
-    ])
+    addImportsDir(resolve('./runtime/composables'))
   },
   moduleDependencies: {
     '@nuxt/ui': {
