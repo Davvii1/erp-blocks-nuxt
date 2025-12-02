@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.8
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.7...v1.0.8)
+
+### 🩹 Fixes
+
+- Add undefined type of totalRows in DataTable component ([368f928](https://github.com/Davvii1/erp-blocks-nuxt/commit/368f928))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.0.7
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.6...v1.0.7)
