@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v1.0.6
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.5...v1.0.6)
+
+### 🩹 Fixes
+
+- Add async functioning to useCountFetch composable ([74ecee0](https://github.com/Davvii1/erp-blocks-nuxt/commit/74ecee0))
+- Pick types and extend it for async useCountFetch ([4a54921](https://github.com/Davvii1/erp-blocks-nuxt/commit/4a54921))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.0.5
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.4...v1.0.5)
