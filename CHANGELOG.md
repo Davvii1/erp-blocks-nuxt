@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.9
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.8...v1.0.9)
+
+### 🩹 Fixes
+
+- Make useCountFetch composable hydration compatible making the call only on client ([1d2d56e](https://github.com/Davvii1/erp-blocks-nuxt/commit/1d2d56e))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.0.8
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.7...v1.0.8)
