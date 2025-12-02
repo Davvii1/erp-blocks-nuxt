@@ -23,8 +23,11 @@ const page = defineModel<number>('page')
       class="flex-1 border border-default rounded-lg grow"
     />
     <div class="flex items-center justify-between">
-      <span class="text-base text-dimmed">
-        {{ (data?.length ?? 0) }} of {{ (totalRows ?? 0) }} rows
+      <span
+        v-if="data && totalRows"
+        class="text-base text-dimmed"
+      >
+        {{ data.length }} of {{ totalRows }} rows
       </span>
       <UPagination
         v-model:page="page"
