@@ -17,5 +17,7 @@
 <script setup lang="ts">
 import { useCookie } from '#app'
 
-const sidebarOpen = useCookie<boolean>('sidebarOpen')
+const sidebarOpen = useCookie<boolean>('sidebarOpen', {
+  default: () => true,
+})
 </script>
