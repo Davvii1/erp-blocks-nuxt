@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.5
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.4...v1.0.5)
+
+### 🩹 Fixes
+
+- Render rows data fromDataTable when data available ([7908ec1](https://github.com/Davvii1/erp-blocks-nuxt/commit/7908ec1))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.0.4
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.3...v1.0.4)
