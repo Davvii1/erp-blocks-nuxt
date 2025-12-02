@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.10
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.9...v1.0.10)
+
+### 🩹 Fixes
+
+- Remove pulse animation from DataTable ([a6b103f](https://github.com/Davvii1/erp-blocks-nuxt/commit/a6b103f))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.0.9
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.8...v1.0.9)
