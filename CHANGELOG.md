@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.0.7
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.6...v1.0.7)
+
+### 🩹 Fixes
+
+- Make collapsible trigger default open with useCookie ([529da11](https://github.com/Davvii1/erp-blocks-nuxt/commit/529da11))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.0.6
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.5...v1.0.6)
