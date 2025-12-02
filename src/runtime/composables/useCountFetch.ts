@@ -1,4 +1,5 @@
 import { useFetch, useState, type UseFetchOptions } from '#app'
+import type { Ref } from 'vue'
 
 export type CountFetchOptions<T> = UseFetchOptions<T> & {
   count?: {
@@ -7,10 +8,14 @@ export type CountFetchOptions<T> = UseFetchOptions<T> & {
   }
 }
 
+interface extendedFetchReturn<T> extends Pick<ReturnType<typeof useFetch<T>>, 'data' | 'refresh' | 'execute' | 'clear' | 'error' | 'status'> {
+  count: Ref<number | undefined>
+}
+
 export async function useCountFetch<T>(
   url: string | (() => string),
   options: CountFetchOptions<T>,
-) {
+): Promise<extendedFetchReturn<T>> {
   const defaultCount = options.count ?? {
     source: 'header' as const,
     name: 'X-Total-Count',
@@ -54,8 +59,10 @@ export async function useCountFetch<T>(
     },
   })
 
-  return {
+  const result = {
     ...fetch,
     count,
-  }
+  } as extendedFetchReturn<T>
+
+  return result
 }
