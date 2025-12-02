@@ -14,12 +14,14 @@ interface extendedFetchReturn<T> extends Pick<ReturnType<typeof useFetch<T>>, 'd
 
 export async function useCountFetch<T>(
   url: string | (() => string),
-  options: CountFetchOptions<T>,
+  options?: CountFetchOptions<T>,
 ): Promise<extendedFetchReturn<T>> {
-  const defaultCount = options.count ?? {
-    source: 'header' as const,
-    name: 'X-Total-Count',
-  }
+  const defaultCount = options && options.count
+    ? options.count
+    : {
+        source: 'header' as const,
+        name: 'X-Total-Count',
+      }
   const mergedOptions: CountFetchOptions<T> = {
     ...options,
     count: defaultCount,
@@ -33,6 +35,9 @@ export async function useCountFetch<T>(
 
   const fetch = await useFetch(url, {
     ...fetchOptions,
+
+    server: false,
+    lazy: true,
 
     onResponse(ctx) {
       const { response } = ctx
