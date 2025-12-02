@@ -28,7 +28,7 @@ definePageMeta({
 
 const page = ref(1)
 
-const { data, count, status } = useCountFetch<UserResponse[]>(() => `https://jsonplaceholder.typicode.com/posts?_page=${page.value}&_limit=5`, {
+const { data, count, status } = await useCountFetch<UserResponse[]>(() => `https://jsonplaceholder.typicode.com/posts?_page=${page.value}&_limit=5`, {
   lazy: true,
 })
 
