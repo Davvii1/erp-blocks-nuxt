@@ -5,7 +5,7 @@ withDefaults(defineProps<{
   data: T[] | undefined
   columns: TableColumn<T>[]
   loading?: boolean
-  totalRows?: number
+  totalRows?: number | undefined
   itemsPerPage?: number
 }>(), {
   itemsPerPage: 5,
@@ -29,6 +29,10 @@ const page = defineModel<number>('page')
       >
         {{ data.length }} of {{ totalRows }} rows
       </span>
+      <div
+        v-else
+        class="h-6 w-25 animate-pulse bg-gray-200"
+      />
       <UPagination
         v-model:page="page"
         active-color="neutral"
