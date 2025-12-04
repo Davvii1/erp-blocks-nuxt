@@ -13,7 +13,30 @@
         :total-rows="count"
         :loading="status === 'pending'"
         :items-per-page="5"
-      />
+      >
+        <template #action-cell>
+          <UDropdownMenu
+            :items="[[
+              {
+                label: 'Edit',
+                icon: 'i-lucide-edit',
+              },
+              {
+                label: 'Delete',
+                icon: 'i-lucide-trash',
+                color: 'error',
+              },
+            ]]"
+          >
+            <UButton
+              icon="i-lucide-ellipsis-vertical"
+              color="neutral"
+              variant="ghost"
+              aria-label="Actions"
+            />
+          </UDropdownMenu>
+        </template>
+      </DataTable>
     </div>
   </div>
 </template>
@@ -53,6 +76,9 @@ const columns: TableColumn<UserResponse>[] = [
     accessorKey: 'body',
     header: 'Body',
     cell: ({ row }) => row.getValue('body'),
+  },
+  {
+    id: 'action',
   },
 ]
 </script>

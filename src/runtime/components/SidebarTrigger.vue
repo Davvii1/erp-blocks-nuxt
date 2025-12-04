@@ -15,9 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCookie } from '#app'
+import { useState } from '#app'
 
-const sidebarOpen = useCookie<boolean>('sidebarOpen', {
-  default: () => true,
-})
+const sidebarOpen = useState<boolean>('sidebarOpen', () => true)
 </script>

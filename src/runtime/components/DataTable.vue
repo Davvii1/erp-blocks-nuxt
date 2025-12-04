@@ -21,13 +21,25 @@ const page = defineModel<number>('page')
       :data="data"
       :columns="columns"
       class="flex-1 border border-default rounded-lg grow"
-    />
-    <div class="flex items-center justify-between">
+    >
+      <template
+        v-for="(_, name) in $slots"
+        #[name]="slotProps"
+      >
+        <slot
+          :name="name"
+          v-bind="slotProps"
+        />
+      </template>
+    </UTable>
+    <div
+      v-if="data && totalRows"
+      class="flex items-center justify-between"
+    >
       <span
-        v-if="data && totalRows"
         class="text-base text-dimmed"
       >
-        {{ data.length }} of {{ totalRows }} rows
+        {{ data?.length }} of {{ totalRows }} rows
       </span>
       <UPagination
         v-model:page="page"
