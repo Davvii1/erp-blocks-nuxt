@@ -21,12 +21,10 @@
 </template>
 
 <script setup lang="ts">
-import { useCookie } from '#app'
+import { useState } from '#app'
 import MainMenu from './MainMenu.vue'
 
-const sidebarOpen = useCookie<boolean>('sidebarOpen', {
-  default: () => true,
-})
+const sidebarOpen = useState<boolean>('sidebarOpen', () => true)
 
 function closeSidebar() {
   sidebarOpen.value = false
