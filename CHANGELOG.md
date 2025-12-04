@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.10...v1.1.0)
+
+### 🚀 Enhancements
+
+- Add support for template slots in DataTable component ([e5df0d2](https://github.com/Davvii1/erp-blocks-nuxt/commit/e5df0d2))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.0.10
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.9...v1.0.10)
