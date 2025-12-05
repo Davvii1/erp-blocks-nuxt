@@ -1,45 +1,55 @@
 <template>
-  <UModal v-bind="modalProps">
-    <slot name="trigger">
-      <UButton
-        icon="i-lucide:filter"
-        label="Filters"
-        color="neutral"
-        variant="solid"
-        class="cursor-pointer"
-      />
-    </slot>
-
-    <template #body>
-      <slot name="body" />
-    </template>
-
-    <template #footer>
-      <slot
-        name="footer"
-      >
+  <UForm v-bind="formProps">
+    <UModal v-bind="modalProps">
+      <slot name="trigger">
         <UButton
-          label="Reset"
+          icon="i-lucide:filter"
+          :label="buttonLabel"
+          color="neutral"
+          variant="solid"
+          class="cursor-pointer"
+        />
+      </slot>
+
+      <template #body>
+        <div class="space-y-4">
+          <slot name="fields" />
+        </div>
+      </template>
+
+      <template #footer>
+        <UButton
+          :label="resetLabel"
           color="neutral"
           variant="outline"
           @click="emit('reset')"
         />
         <UButton
+          v-if="applyButton"
           type="submit"
-          label="Apply"
+          :label="applyLabel"
           color="neutral"
         />
-      </slot>
-    </template>
-  </UModal>
+      </template>
+    </UModal>
+  </UForm>
 </template>
 
 <script setup lang="ts">
-import type { ModalProps } from '@nuxt/ui'
+import type { FormProps, FormSchema, ModalProps } from '@nuxt/ui'
 
 withDefaults(defineProps<{
+  formProps?: FormProps<FormSchema>
   modalProps?: ModalProps
+  buttonLabel?: string
+  resetLabel?: string
+  applyButton?: boolean
+  applyLabel?: string
 }>(), {
+  buttonLabel: 'Filters',
+  resetLabel: 'Reset',
+  applyButton: true,
+  applyLabel: 'Apply',
   modalProps: () => ({
     title: 'Filters',
     scrollable: true,

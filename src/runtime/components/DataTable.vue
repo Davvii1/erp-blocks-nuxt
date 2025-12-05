@@ -39,12 +39,12 @@ const page = defineModel<number>('page')
       <span
         class="text-base text-dimmed"
       >
-        {{ data?.length }} of {{ totalRows }} rows
+        {{ data?.length || itemsPerPage }} of {{ totalRows || itemsPerPage }} rows
       </span>
       <UPagination
         v-model:page="page"
         active-color="neutral"
-        :total="totalRows"
+        :total="totalRows || itemsPerPage"
         :items-per-page="itemsPerPage"
       />
     </div>
