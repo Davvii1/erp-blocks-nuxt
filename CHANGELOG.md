@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.1
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.0...v1.1.1)
+
+### 💅 Refactors
+
+- FiltersModal Form behavior and customizable labels\nBREAKING CHANGE: body slot name change to fields ([7b1aad9](https://github.com/Davvii1/erp-blocks-nuxt/commit/7b1aad9))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.1.0
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.0.10...v1.1.0)
