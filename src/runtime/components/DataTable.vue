@@ -2,7 +2,7 @@
 import type { TableProps } from '@nuxt/ui'
 
 withDefaults(defineProps<{
-  tableProps: TableProps
+  tableProps: TableProps<T>
   totalRows?: number | undefined
   itemsPerPage?: number
 }>(), {
