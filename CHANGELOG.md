@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.2
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.1...v1.1.2)
+
+### 💅 Refactors
+
+- DataTable props passing as tableProps instead of data, columns and loading only BREAKING CHANGES: props for DataTable table should be passed as tableProps ([174aac4](https://github.com/Davvii1/erp-blocks-nuxt/commit/174aac4))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.1.1
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.0...v1.1.1)
