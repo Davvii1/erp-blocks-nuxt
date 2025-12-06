@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.1.3
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.2...v1.1.3)
+
+### 🩹 Fixes
+
+- Add typings to TableProps ([c2ec180](https://github.com/Davvii1/erp-blocks-nuxt/commit/c2ec180))
+
+### ❤️ Contributors
+
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.1.2
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.1...v1.1.2)
