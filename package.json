@@ -37,7 +37,8 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.2.1"
+    "@nuxt/kit": "^4.2.1",
+    "better-sqlite3": "^12.5.0"
   },
   "devDependencies": {
     "@nuxt/content": "3.8.1",

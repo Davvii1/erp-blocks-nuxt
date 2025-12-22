@@ -8,25 +8,29 @@
     <div class="grow">
       <DataTable
         v-model:page="page"
-        :data="data"
-        :columns="columns"
+        :table-props="{
+          data,
+          columns,
+          loading: status === 'pending',
+        }"
         :total-rows="count"
-        :loading="status === 'pending'"
         :items-per-page="5"
       >
         <template #action-cell>
           <UDropdownMenu
-            :items="[[
-              {
-                label: 'Edit',
-                icon: 'i-lucide-edit',
-              },
-              {
-                label: 'Delete',
-                icon: 'i-lucide-trash',
-                color: 'error',
-              },
-            ]]"
+            :items="[
+              [
+                {
+                  label: 'Edit',
+                  icon: 'i-lucide-edit',
+                },
+                {
+                  label: 'Delete',
+                  icon: 'i-lucide-trash',
+                  color: 'error',
+                },
+              ],
+            ]"
           >
             <UButton
               icon="i-lucide-ellipsis-vertical"
@@ -51,9 +55,13 @@ definePageMeta({
 
 const page = ref(1)
 
-const { data, count, status } = await useCountFetch<UserResponse[]>(() => `https://jsonplaceholder.typicode.com/posts?_page=${page.value}&_limit=5`, {
-  lazy: true,
-})
+const { data, count, status } = await useCountFetch<UserResponse[]>(
+  () =>
+    `https://jsonplaceholder.typicode.com/posts?_page=${page.value}&_limit=5`,
+  {
+    lazy: true,
+  },
+)
 
 type UserResponse = {
   userId: number
