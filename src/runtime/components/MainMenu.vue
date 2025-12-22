@@ -3,6 +3,9 @@
     orientation="vertical"
     :items="items"
     class="data-[orientation=vertical]:w-full py-12 px-2 gap-2"
+    :ui="{
+      linkLabel: 'text-clip text-left',
+    }"
   />
 </template>
 
