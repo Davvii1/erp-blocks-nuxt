@@ -1,9 +1,9 @@
 <template>
   <div>
     <UCollapsible
+      v-if="breakpoints.isGreaterOrEqual('lg')"
       v-model:open="sidebarOpen"
       :ui="{
-        root: 'max-lg:hidden',
         content:
           'max-lg:fixed z-40 max-lg:bg-white left-0 top-0 data-[state=open]:animate-collapsible-right data-[state=closed]:animate-collapsible-left border-r border-scn-sidebar-border dark:border-default',
       }"
@@ -20,15 +20,17 @@
       </template>
     </UCollapsible>
     <UDrawer
+      v-if="breakpoints.isSmaller('lg')"
       v-model:open="sidebarOpen"
       direction="left"
-      :ui="{
-        overlay: 'lg:hidden',
-        content: 'lg:hidden',
-      }"
     >
       <template #content>
-        <div class="w-[40vw]">
+        <UIcon
+          name="i-lucide-x"
+          class="size-5 absolute z-50 top-4 right-4 cursor-pointer lg:hidden"
+          @click="closeSidebar"
+        />
+        <div class="w-[40vw] mt-10">
           <MainMenu />
         </div>
       </template>
@@ -38,8 +40,12 @@
 
 <script setup lang="ts">
 import { useState } from '#app'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import MainMenu from './MainMenu.vue'
 
+const breakpoints = useBreakpoints(breakpointsTailwind, {
+  ssrWidth: 768,
+})
 const sidebarOpen = useState<boolean>('sidebarOpen', () => true)
 
 function closeSidebar() {
