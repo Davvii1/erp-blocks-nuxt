@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v1.1.4
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.3...v1.1.4)
+
+### 💅 Refactors
+
+- Add mobile responsive sidebar ([cafc181](https://github.com/Davvii1/erp-blocks-nuxt/commit/cafc181))
+
+### 🏡 Chore
+
+- **release:** V1.1.3 ([7ce7e3f](https://github.com/Davvii1/erp-blocks-nuxt/commit/7ce7e3f))
+
+### ❤️ Contributors
+
+- David Rodriguez <david2002rg@hotmail.com>
+- Davvii1 <david2002rg@hotmail.com>
+
 ## v1.1.3
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.2...v1.1.3)
