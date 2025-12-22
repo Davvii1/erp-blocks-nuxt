@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v1.1.5
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.4...v1.1.5)
+
+### 🩹 Fixes
+
+- Responsive MainMenu using breakpoints for collapsibble and drawer ([ce006ad](https://github.com/Davvii1/erp-blocks-nuxt/commit/ce006ad))
+
+### 🏡 Chore
+
+- Update .gitignore and remove .npmrc from tracking ([ca54172](https://github.com/Davvii1/erp-blocks-nuxt/commit/ca54172))
+
+### ❤️ Contributors
+
+- David Rodriguez <david2002rg@hotmail.com>
+
 ## v1.1.4
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.3...v1.1.4)
