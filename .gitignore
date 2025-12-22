@@ -26,6 +26,8 @@ dist
 
 # Env
 .env
+
+# Npm
 .npmrc
 
 # Testing
