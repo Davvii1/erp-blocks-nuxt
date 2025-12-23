@@ -50,6 +50,7 @@ Use the provided dashboard layout in your pages:
 
 <script setup>
 definePageMeta({
+  middleware: ["auth"],
   layout: 'dashboard'
 })
 </script>

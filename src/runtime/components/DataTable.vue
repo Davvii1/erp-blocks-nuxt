@@ -23,8 +23,14 @@ defineSlots<TableSlots<T>>()
       v-bind="tableProps"
       class="flex-1 border border-default rounded-lg grow"
     >
-      <template #default="slotProps">
-        <slot v-bind="slotProps" />
+      <template
+        v-for="(_, name) in $slots"
+        #[name]="slotProps"
+      >
+        <slot
+          :name="name"
+          v-bind="slotProps"
+        />
       </template>
     </UTable>
     <div
