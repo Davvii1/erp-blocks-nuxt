@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.0
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.6...v1.2.0)
+
+### 🚀 Enhancements
+
+- Add logout option for NavigationHeader, configurable in app.config ([916d781](https://github.com/Davvii1/erp-blocks-nuxt/commit/916d781))
+
+### ❤️ Contributors
+
+- David Rodriguez <david2002rg@hotmail.com>
+
 ## v1.1.6
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.5...v1.1.6)
