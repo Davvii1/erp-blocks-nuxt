@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v1.2.1
+
+[compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.2.0...v1.2.1)
+
+### 🩹 Fixes
+
+- Change props spread on DataTable component' ([5d4caec](https://github.com/Davvii1/erp-blocks-nuxt/commit/5d4caec))
+
+### ❤️ Contributors
+
+- David Rodriguez <david2002rg@hotmail.com>
+
 ## v1.2.0
 
 [compare changes](https://github.com/Davvii1/erp-blocks-nuxt/compare/v1.1.6...v1.2.0)
