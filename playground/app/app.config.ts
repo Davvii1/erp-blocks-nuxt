@@ -161,4 +161,9 @@ export default defineAppConfig({
       ],
     ],
   },
+  auth: {
+    logout: () => {
+      console.log('logout')
+    },
+  },
 })

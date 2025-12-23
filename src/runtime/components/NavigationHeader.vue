@@ -15,14 +15,26 @@
     </div>
     <div class="space-x-6 flex items-center">
       <ColorModeButton />
+      <UButton
+        icon="i-lucide-log-out"
+        size="md"
+        color="neutral"
+        variant="ghost"
+        @click="logout"
+      />
     </div>
   </nav>
 </template>
 
 <script setup lang="ts">
-import { useRoute } from '#app'
+import { useRoute, useAppConfig } from '#app'
 import ColorModeButton from './ColorModeButton.vue'
 import SidebarTrigger from './SidebarTrigger.vue'
 
 const route = useRoute()
+const appConfig = useAppConfig() as { auth?: { logout: () => void } }
+
+const logout = () => {
+  appConfig.auth?.logout()
+}
 </script>
