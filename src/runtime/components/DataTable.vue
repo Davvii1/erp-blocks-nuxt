@@ -1,15 +1,20 @@
 <script setup lang="ts" generic="T">
-import type { TableProps } from '@nuxt/ui'
+import type { TableProps, TableSlots } from '@nuxt/ui'
 
-withDefaults(defineProps<{
-  tableProps: TableProps<T>
-  totalRows?: number | undefined
-  itemsPerPage?: number
-}>(), {
-  itemsPerPage: 5,
-})
+withDefaults(
+  defineProps<{
+    tableProps: TableProps<T>
+    totalRows?: number | undefined
+    itemsPerPage?: number
+  }>(),
+  {
+    itemsPerPage: 5,
+  },
+)
 
 const page = defineModel<number>('page')
+
+defineSlots<TableSlots<T>>()
 </script>
 
 <template>
@@ -18,24 +23,17 @@ const page = defineModel<number>('page')
       v-bind="tableProps"
       class="flex-1 border border-default rounded-lg grow"
     >
-      <template
-        v-for="(_, name) in $slots"
-        #[name]="slotProps"
-      >
-        <slot
-          :name="name"
-          v-bind="slotProps"
-        />
+      <template #default="slotProps">
+        <slot v-bind="slotProps" />
       </template>
     </UTable>
     <div
       v-if="tableProps.data && totalRows"
       class="flex items-center justify-between"
     >
-      <span
-        class="text-base text-dimmed"
-      >
-        {{ tableProps.data?.length || itemsPerPage }} of {{ totalRows || itemsPerPage }} rows
+      <span class="text-base text-dimmed">
+        {{ tableProps.data?.length || itemsPerPage }} of
+        {{ totalRows || itemsPerPage }} rows
       </span>
       <UPagination
         v-model:page="page"
